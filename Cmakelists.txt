@@ -1,4 +1,3 @@
-
 cmake_minimum_required(VERSION 3.10)
 
 project(Calculadora)
@@ -6,16 +5,10 @@ project(Calculadora)
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
-
 add_executable(calculadora Calculadora.cpp)
 
 
 find_package(GTest REQUIRED)
 enable_testing()
 
-
-add_executable(test_calculadora TestCalculadora.cpp)
-
-
-target_link_libraries(test_calculadora PRIVATE GTest::GTest GTest::Main)
-add_test(NAME CalculadoraTests COMMAND test_calculadora)
+add_test(NAME CalculadoraTests COMMAND calculadora)

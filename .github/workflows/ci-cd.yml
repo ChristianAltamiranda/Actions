@@ -12,10 +12,10 @@ jobs:
 
     steps:
     - name: Checkout code
-      uses: actions/checkout@v3  # Actualizado a la última versión
+      uses: actions/checkout@v3
 
     - name: Set up CMake
-      uses: lukka/get-cmake@v3.21.2  # Verifica si hay una versión más reciente
+      uses: lukka/get-cmake@v3.21.2
 
     - name: Install dependencies
       run: sudo apt-get update && sudo apt-get install -y build-essential
@@ -26,15 +26,14 @@ jobs:
         cd build
         cmake ..
         make
-        ./calculadora  # Asegúrate de que este archivo se genere correctamente
+        ./calculadora  # Ejecuta tu ejecutable que contiene las pruebas
 
   deploy:
     needs: build
     runs-on: ubuntu-latest
     steps:
     - name: Checkout code
-      uses: actions/checkout@v3  # Actualizado a la última versión
+      uses: actions/checkout@v3
 
     - name: Deploy to production
       run: echo "Deploying to production server"
-
